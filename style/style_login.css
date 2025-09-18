@@ -1,0 +1,194 @@
+* { /* Normalmente iniciamos toda a caixa dessa forma para ter maior controle. */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid; /* Layout utilizado: Grid -> Divide a tela em linhas E colunas */
+    grid-template-columns: 1fr 1fr; /* Nesse caso, ocupa metade da tela. Também pode ser definido como 100px ou 50%, porém, o padrão por questões de responsividade é o fr*/
+    height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+.esquerda {
+    background-color: #26388e;
+    color: white;
+    padding-left: 2rem; /* Mais espaço à esquerda sem diminuir o tamanho do texto */
+    padding-right: 2rem; /* Mais espaço à direita. Também podemos usar o bottom e right */
+}
+
+.direita {
+    background-color: #F0F8FF;
+    color: black;
+}
+
+/* Organizando o lado esquerdo */
+.texto_boas_vindas{
+    display: flex; /* os três textos ficam um do lado do outro horizontalmente */
+    flex-direction: column; /* organiza os três textos em uma coluna */
+    align-items: center; /* centraliza */
+    gap: 1.5rem; /* distância entre as frases*/
+    padding-top: 15rem; /* distância interna em relação ao topo */
+}
+
+.texto_boas_vindas h1{
+    font-size: 2rem; /* nesse caso, o rem permite uma consistência maior que o em, pois é relativo à raiz*/
+    font-family: "Open Sans";
+}
+
+.texto_boas_vindas h2{
+    font-size: 1.3rem;
+    font-family: "Open Sans";
+    font-style: italic;
+}
+
+.texto_boas_vindas h3{
+    font-family: "Open Sans";
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.icon_user{
+    max-width: 4.5rem;
+}
+
+.icon_password{
+    max-width: 6rem;
+    margin-left: 0.2rem;
+}
+
+/* Organizando o lado direito */
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative; /* PADDING: Espaço interno */
+    top: 10rem;
+}
+
+.login_title{
+    font-family: "Open Sans";
+    font-size: 3rem;
+    color: #0d35ee;
+    position: relative;
+    top: -1rem;
+    left: 1rem;
+}
+
+.login .lembrar_senha{
+    font-family: "Open Sans";
+    font-size: 1rem;
+    color: black;
+    position: relative;
+    top: 0.05rem;
+    right: -3.5rem;
+}
+
+.entrada_nome_usuario{ /* imagem + caixinha */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    top: -1rem;
+    right: -2rem;
+}
+
+.entrada_senha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: -1rem;
+    right: -1rem;
+}
+
+input{ /* Estilizando o que o usuário irá digitar */
+    font-size: 1rem;
+    font-family: "Open Sans";
+    color: #26272a;
+}
+
+.input_user{ /* estilizando a "caixinha" do input */
+    position: relative;
+    left: 0.05rem; /* para alinhar mais com a entrada do usuário */
+    background-color: #bad3fe;
+    border: none;
+    border-radius: 1rem;
+    min-width: 15rem;
+    padding: 0.5rem; /* espaço interno do input */
+}
+
+.input_senha{ /* estilizando a "caixinha" da senha */
+    position: relative;
+    left: -0.3rem;
+    background-color: #bad3fe;
+    border: none;
+    border-radius: 1rem;
+    min-width: 15rem;
+    padding: 0.5rem;
+}
+
+input::placeholder{ /* Estilizando a frase interna que aparece antes do usuário digitar algo */
+    color: #545454;
+    font-size: 0.9rem;
+}
+
+input:focus{ /* A entrada não tem borda, mas ao clicar nela, uma borda aparece. É ela que iremos estilizar aqui. */
+    outline-color: blue;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    right: -2rem;
+    top: 1.5rem;
+}
+
+.button_entrar{
+    min-width: 10rem;
+    background-color: #00a651;
+    color: white;
+    padding: 0.25rem;
+    min-height: 2rem;
+    font-family: "Open Sans";
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.button_cadastrar{
+    min-width: 10rem;
+    background-color: #26388e;
+    color: white;
+    min-height: 2rem;
+    padding: 0.25rem;
+    font-family: "Open Sans";
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.button_entrar:hover{
+    background-color: #007a3f;
+    cursor: pointer;
+}
+
+.button_cadastrar:hover{
+    background-color: #00357a;
+    cursor: pointer;
+}
+
+.button_entrar:active{ /* estilizar quando o botão for CLICADO */
+    background-color: #17320b;
+    cursor: pointer;
+}
+
+.button_cadastrar:active{
+    background-color: #001b3d;
+    cursor: pointer;
+}
